@@ -1,0 +1,15 @@
+name: Sample workflow
+
+on: [push, pull_request]
+
+jobs:
+    my-job:
+       runs-on: windows-latest
+       steps:
+          - name: Clone the git repo
+             run: git clone https://github.com/RG0102/IntrotoDevOps-Lab6.git
+
+          - name: Run the build script
+            run: |
+                  cd HelloWorld.c
+                  make -j2
